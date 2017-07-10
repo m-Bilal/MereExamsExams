@@ -8,6 +8,7 @@
     android:padding="1dp">
 
     <RelativeLayout
+        android:background="#FFF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp">
@@ -31,7 +32,7 @@
             android:id="@+id/textview_id_recyclerview_main_activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/recyclerview_label_id_main_activity"
+            android:layout_below="@+id/textview_name_recyclerview_main_activity"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/recyclerview_label_id_main_activity"
             android:textColor="#000" />
@@ -49,6 +50,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:layout_toLeftOf="@+id/textview_discipline_id_recyclerview_main_activity" />
+            android:layout_toLeftOf="@+id/textview_discipline_id_recyclerview_main_activity"
+            android:layout_below="@id/textview_name_recyclerview_main_activity"
+            android:text="Discipline ID"/>
     </RelativeLayout>
 </FrameLayout>

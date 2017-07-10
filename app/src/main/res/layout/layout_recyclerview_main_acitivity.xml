@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:background="#000"
+    android:orientation="vertical"
+    android:padding="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/textview_name_recyclerview_main_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/recyclerview_label_id_main_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textview_name_recyclerview_main_activity"
+            android:text="ID" />
+
+        <TextView
+            android:id="@+id/textview_id_recyclerview_main_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recyclerview_label_id_main_activity"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/recyclerview_label_id_main_activity"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/textview_discipline_id_recyclerview_main_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/textview_name_recyclerview_main_activity"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/reyclerview_label_discipline_id_main_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/textview_discipline_id_recyclerview_main_activity" />
+    </RelativeLayout>
+</FrameLayout>

@@ -10,11 +10,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+
 public class MainActivity extends AppCompatActivity {
 
     Button buttonSync, buttonRefresh;
     RecyclerView recyclerView;
     private ProgressDialog dialog;
+
+    private Realm realm;
+
+    public static RealmConfiguration config;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,17 +32,21 @@ public class MainActivity extends AppCompatActivity {
         buttonSync = (Button) findViewById(R.id.button_sync);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
+        createRealmConfig();
+
     }
 
-    void showProgressDialog() {
-        dialog = new ProgressDialog(this);
-        dialog.setMessage("Loading exams...");
-        dialog.setCanceledOnTouchOutside(false);
-        dialog.show();
-    }
+    void createRealmConfig() {
+        // initialize Realm
+        Realm.init(getApplicationContext());
 
-    void hideProgressDialog() {
-        dialog.dismiss();
+        // create your Realm configuration
+        config = new RealmConfiguration
+                .Builder()
+                .deleteRealmIfMigrationNeeded()
+                .name("myCustomRealm")
+                .build();
+        Realm.setDefaultConfiguration(config);
     }
 
     public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.MyViewHolder> {
